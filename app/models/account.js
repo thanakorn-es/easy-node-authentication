@@ -59,6 +59,7 @@ Account.prototype.test = function(opts, done){
       this._id = entry.uid;
       this.email = entry.uid;
       this.password = entry.userPassword;
+      console.log('rewriting value');
       console.log(this);
 
       return done(null, this);
