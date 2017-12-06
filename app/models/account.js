@@ -3,7 +3,10 @@ var OpenLdap = require('../modules/openldap');
 var openldap = new OpenLdap();
 
 var Account = function(){
-/*
+  var _id;
+  var email;
+  var password;
+  /*
   this._id = '12021';
   this.email = 'guest1@ums.com';
   this.password = '123456';
