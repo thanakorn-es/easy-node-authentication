@@ -72,7 +72,6 @@ OpenLdap.prototype.test = function(params, done){
       else{
           done(tmp);
       }
-
     });
   });
 };

@@ -52,7 +52,7 @@ Account.prototype.test = function(opts, done){
       console.log('not error');
       //console.log(entry);
       this._id = "";
-      this._email = "";
+      this.email = "";
       this.password = "";
       //console.log(this);
       return done(null, this);
