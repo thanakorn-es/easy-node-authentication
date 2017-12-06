@@ -55,12 +55,12 @@ Account.prototype.test = function(opts, done){
     else{
       console.log('not error');
       console.log(entry);
-      console.log(this);
+      console.log(this.email);
       this._id = entry.uid;
       this.email = entry.uid;
       this.password = entry.userPassword;
       console.log('rewriting value');
-      console.log(this);
+      console.log(this.email);
 
       return done(null, this);
     }
