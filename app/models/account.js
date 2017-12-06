@@ -3,10 +3,11 @@ var OpenLdap = require('../modules/openldap');
 var openldap = new OpenLdap();
 
 var Account = function(){
+/*
   this._id = '12021';
   this.email = 'guest1@ums.com';
   this.password = '123456';
-  /*this._id = _id;
+  this._id = _id;
   this.email = email;
   this.password = password;*/
 
@@ -51,9 +52,9 @@ Account.prototype.test = function(opts, done){
     else{
       console.log('not error');
       //console.log(entry);
-      this._id = entry.uid;
-      this.email = entry.uid;
-      this.password = entry.userPassword;
+      _id = entry.uid;
+      email = entry.uid;
+      password = entry.userPassword;
       //console.log(this);
       return done(null, this);
     }
