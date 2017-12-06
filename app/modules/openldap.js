@@ -34,7 +34,7 @@ var OpenLdap = function(){
 
 OpenLdap.prototype.test = function(params, done){
   var opts = {
-    filter: 'uid=' + params.uid,
+    //filter: 'uid=' + params.uid,
     filter: '(&(uid='+ params.uid + ')(userPassword={SHA}LmIAac5WRrZRdvvsVGhNzkuJCiI=',
     scope: 'sub',
     attributes: []
