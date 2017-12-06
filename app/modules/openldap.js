@@ -1,12 +1,25 @@
 var ldap = require('ldapjs');
 
 // ldapsearch -H ldap://www.zflexldap.com:389 -LLL -x -D "cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com" -w zflexpass -b "ou=users,ou=guests,dc=zflexsoftware,dc=com" uid=guest1
-const environment = {
+/*const environment = {
     url: 'ldap://www.zflexldap.com:389',
     rootDN: "cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com",
     rootPassword: "zflexpass",
     baseDN: "ou=users,ou=guests,dc=zflexsoftware,dc=com"
+};*/
+const environment = {
+    url: 'ldap://10.57.1.31:389',
+    rootDN: "cn=ldapadm,dc=excise,dc=go,dc=th",
+    rootPassword: "P@ssw0rd",
+    baseDN: "ou=People,dc=excise,dc=go,dc=th"
 };
+/*
+slappasswd -h {SSHA} -s Nattha501
+{SSHA}pSwicOfZpLXwXRoSi0+22GlP+FXY8cxm
+
+slappasswd -h {SHA} -s Nattha501
+{SHA}LmIAac5WRrZRdvvsVGhNzkuJCiI=
+*/
 
 var client;
 
@@ -22,6 +35,7 @@ var OpenLdap = function(){
 OpenLdap.prototype.test = function(params, done){
   var opts = {
     filter: 'uid=' + params.uid,
+    filter: '(&(uid='+ params.uid + ')(userPassword={SHA}LmIAac5WRrZRdvvsVGhNzkuJCiI=',
     scope: 'sub',
     attributes: []
   };
