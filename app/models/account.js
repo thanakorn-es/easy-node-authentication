@@ -51,9 +51,9 @@ Account.prototype.test = function(opts, done){
     else{
       console.log('not error');
       //console.log(entry);
-      this._id = "";
-      this.email = "";
-      this.password = "";
+      this._id = entry.uid;
+      this.email = entry.uid;
+      this.password = entry.userPassword;
       //console.log(this);
       return done(null, this);
     }
