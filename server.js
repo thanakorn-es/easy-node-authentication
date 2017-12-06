@@ -14,7 +14,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
 var os = require('os');
 
 // configuration ===============================================================
