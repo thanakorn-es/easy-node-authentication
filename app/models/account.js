@@ -51,11 +51,13 @@ Account.prototype.test = function(opts, done){
     }
     else{
       console.log('not error');
-      //console.log(entry);
-      _id = entry.uid;
-      email = entry.uid;
-      password = entry.userPassword;
-      //console.log(this);
+      console.log(entry);
+      console.log(this);
+      this._id = entry.uid;
+      this.email = entry.uid;
+      this.password = entry.userPassword;
+      console.log(this);
+
       return done(null, this);
     }
   });
