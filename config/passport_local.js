@@ -49,8 +49,7 @@ module.exports = function(passport) {
 
       Account.test(opts, function(err,user){
         console.log('@passport_local file');
-        console.log(user.email);
-        console.log(user.password);
+
 
         if( err instanceof Error ){
           console.log('Error');
@@ -58,6 +57,8 @@ module.exports = function(passport) {
         }
         else{
           console.log('Success');
+          console.log(user.email);
+          console.log(user.password);
           //var AC = require('../app/models/account');
           Account._id = user._id;
           Account.email = user.email;
