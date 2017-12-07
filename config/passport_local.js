@@ -58,7 +58,7 @@ module.exports = function(passport) {
         }
         else{
           console.log('Success');
-          var AC = new Account();
+          var AC = require('../app/models/account');
           AC._id = user._id;
           AC.email = user.email;
           AC.password = user.password;
