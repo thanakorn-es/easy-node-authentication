@@ -53,10 +53,16 @@ module.exports = function(passport) {
         console.log(user.password);
 
         if( err instanceof Error ){
+          console.log('Error');
           return done(null, false, req.flash('loginMessage', 'No user found.'));
         }
         else{
-          return done(null, user);
+          console.log('Success');
+          var AC = new Account();
+          AC._id = user._id;
+          AC.email = user.email;
+          AC.password = user.password;
+          return done(null, AC);
         }
       });
 
