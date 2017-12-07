@@ -44,6 +44,8 @@ password =  Nattha501
 hash = {SSHA}pSwicOfZpLXwXRoSi0+22GlP+FXY8cxm
 */
 Crypt.prototype.checkPassword = function(password, hash){
+  console.log('crypt : ' + password);
+  console.log('crypt : ' + hash);
 
   if(hash.substr(0,6) === '{SSHA}') {
     var bhash = new Buffer(hash.substr(6),'base64');
