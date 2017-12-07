@@ -58,11 +58,11 @@ module.exports = function(passport) {
         }
         else{
           console.log('Success');
-          var AC = require('../app/models/account');
-          AC._id = user._id;
-          AC.email = user.email;
-          AC.password = user.password;
-          return done(null, AC);
+          //var AC = require('../app/models/account');
+          Account._id = user._id;
+          Account.email = user.email;
+          Account.password = user.password;
+          return done(null, Account);
         }
       });
 
