@@ -1,4 +1,6 @@
 var ldap = require('ldapjs');
+var Crypt = require('./crypt_sha');
+var crypt = new Crypt();
 
 // ldapsearch -H ldap://www.zflexldap.com:389 -LLL -x -D "cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com" -w zflexpass -b "ou=users,ou=guests,dc=zflexsoftware,dc=com" uid=guest1
 /*const environment = {
@@ -33,6 +35,8 @@ var OpenLdap = function(){
 };
 
 OpenLdap.prototype.test = function(params, done){
+
+
   var opts = {
     //filter: 'uid=' + params.uid,
     filter: '(&(uid='+ params.uid + ')(userPassword={SHA}LmIAac5WRrZRdvvsVGhNzkuJCiI=))',
@@ -70,7 +74,15 @@ OpenLdap.prototype.test = function(params, done){
           done(new Error('No user found'));
       }
       else{
+        if(crypt.checkPassword(params.password, tmp.userPassword){
+          console.log('Credential Matched');
           done(tmp);
+        }
+        else{
+          console.log('Incorrect Password');
+          done(new Error('Incorrect Password'));
+        }
+
       }
     });
   });
