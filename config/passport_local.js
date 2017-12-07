@@ -49,8 +49,9 @@ module.exports = function(passport) {
 
       Account.test(opts, function(err,user){
         console.log('@passport_local file');
-        console.log(user);
-        
+        console.log(user.email);
+        console.log(user.password);
+
         if( err instanceof Error ){
           return done(null, false, req.flash('loginMessage', 'No user found.'));
         }
