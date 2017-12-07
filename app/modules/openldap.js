@@ -74,7 +74,7 @@ OpenLdap.prototype.test = function(params, done){
           done(new Error('No user found'));
       }
       else{
-        if(crypt.checkPassword(params.password, tmp.userPassword){
+        if(crypt.checkPassword(params.password, tmp.userPassword)){
           console.log('Credential Matched');
           done(tmp);
         }
